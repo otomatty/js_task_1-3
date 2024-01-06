@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // タスク一覧の初期データ
+      let tasks = ["掃除", "買い物", "散歩"];
+
+      // タスク一覧を表示する関数
+      function displayTasks() {
+        console.log("========================");
+        console.log("現在持っているタスク一覧");
+        console.log("========================");
+        tasks.forEach((task, index) => {
+          console.log(`${index + 1}：${task}`);
+        });
+      }
+
+      // 最初にタスク一覧を表示
+      displayTasks();
+
+      // タスクを入力して追加する処理
+      while (true) {
+        const newTask = prompt(
+          "新しいタスクを入力してください（キャンセルで終了）"
+        );
+
+        // キャンセルが押されたらループを終了
+        if (newTask === null) {
+          break;
+        }
+
+        // 入力されたタスクを追加
+        tasks.push(newTask);
+
+        // 更新されたタスク一覧を表示
+        displayTasks();
+      }
+    </script>
+  </body>
+</html>
